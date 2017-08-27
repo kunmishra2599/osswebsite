@@ -33,15 +33,15 @@ h1{
 }
 
 .btnA:hover{
-  background:#ffca00;
+  background: rgba(255, 202, 0, 0.5);
 }
 
 .btnB:hover{
-  background:#0088fe;
+  background:rgba(0, 136, 254, 0.5);
 }
 
 .btnC:hover{
-  background:#22b240;
+  background: rgba(34, 178, 64, 0.5);
 }
 
 .button-row{
