@@ -1,0 +1,50 @@
+
+html{
+  background-color: #white; //Can someone please make the logo bg transparent
+}
+
+body{
+  font-family: 'Lato', sans-serif;
+  font-weight: lighter;
+}
+
+h1{
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+.main-header{
+  text-align: center;
+  margin-top: 17%;
+}
+.main-logo{
+  height:20%;
+}
+.s12, .s4{
+  text-align: center;
+}
+.btn{
+  font-size: 1.2em;
+  font-family: 'Josefin Sans';
+  font-weight:100;
+  background: none;
+  color: black;
+  box-shadow: none;
+  border: 0.5px black solid;
+}
+
+.btnA:hover{
+  background:#ffca00;
+}
+
+.btnB:hover{
+  background:#0088fe;
+}
+
+.btnC:hover{
+  background:#22b240;
+}
+
+.button-row{
+  margin-top:5%;
+  padding:0px;
+}
