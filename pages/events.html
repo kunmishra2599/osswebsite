@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="../css/events.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:100|Josefin+Sans|Lato" rel="stylesheet">
+
+
+    <title> Events | NTU OSS </title>
+  </head>
+
+<body>
+
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '102814740426818',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v2.10'
+      });
+      FB.AppEvents.logPageView();
+      FB.api(
+         '/219467331408976',
+         'GET',
+         {"fields":"events{description,start_time,place,id}"},
+         function(response) {
+           FB.api(
+            "1118080895003319",
+            function (response) {
+              if (response && !response.error) {
+                console.log(response)
+              }
+            }
+        );
+         }
+       );
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "http://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+
+
+  </script>
+
+  <nav>
+   <div class="nav-wrapper">
+     <a href="../index.html" class="brand-logo"><img class="main-logo" src="../logo-main.jpg"/></a>
+     <ul id="nav-mobile" class="right hide-on-med-and-down">
+       <li><a href="about.html">What We Do</a></li>
+       <li><a href="events.html">Our Events</a></li>
+       <li><a href="contact.html">Contact Us</a></li>
+     </ul>
+   </div>
+ </nav>
+
+  <div class="container">
+      <div class="col s12 main-header"><h1>Events</h1></div>
+
+      <div class="col s12">
+        <!-- <p> Dunno what to put here </p> -->
+      </div>
+
+  </div>
+
+</body>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+</html>
