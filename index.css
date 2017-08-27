@@ -30,6 +30,7 @@ h1{
   color: black;
   box-shadow: none;
   border: 0.5px black solid;
+  border-radius: 0px;
 }
 
 .btnA:hover{
