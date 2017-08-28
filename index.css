@@ -1,6 +1,7 @@
 
 html{
-  background-color: #white; //Can someone please make the logo bg transparent
+  /*background-color: #white; //Can someone please make the logo bg transparent*/
+  background-color: #fcfdff;
 }
 
 body{
@@ -18,6 +19,9 @@ h1{
 }
 .main-logo{
   height:20%;
+}
+.main-logo:hover{
+
 }
 .s12, .s4{
   text-align: center;
