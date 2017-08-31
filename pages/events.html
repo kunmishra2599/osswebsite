@@ -3,13 +3,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="../css/events.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:100|Josefin+Sans|Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:100,400|Josefin+Sans:300,400|Lato" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 
     <title> Events | NTU OSS </title>
   </head>
 
 <body>
+
 
   <script>
     window.fbAsyncInit = function() {
@@ -19,22 +22,29 @@
         xfbml            : true,
         version          : 'v2.10'
       });
-      FB.AppEvents.logPageView();
+
+
+      // FB.AppEvents.logPageView();
+      //  FB.api(
+      //     '/219467331408976/events', {fields: 'description, start_time, id, access_token', access_token: 'EAACEdEose0cBAOl1U0WRnUWFKBpuly3IAoRI5RLP85P6ll41wYWIfFvhD9WKj6mSBxlDG11OgxvZAAQ0tcee0gMUFgq2W4C70j3C1vbbePy2SVWP9J8fZCZAh586hH2wIcjMzFOhGIc8dSo2siZBnHZBLNRz10ejKshSWZBo6SjHny4pgbq1z56Hx1PiDTR8XCnAZCCw0MPTQZDZD'},
+      //     function (response) {
+      //       console.log(response)
+      //     }
+      // );
+
+
       FB.api(
-         '/219467331408976',
-         'GET',
-         {"fields":"events{description,start_time,place,id}"},
-         function(response) {
-           FB.api(
-            "1118080895003319",
-            function (response) {
-              if (response && !response.error) {
-                console.log(response)
-              }
-            }
-        );
+         '219467331408976/events?access_token=102814740426818|Yb7Io6_Ze8Ql3EjVcsNabKyLTWo',
+         function (response) {
+           var data = response.data
+
+           for (x in data) {
+            //  console.log(data[x].description)
+             $( "#event-results" ).append( '<div class="col s12"><div class="card"><div class="card-content"><span class="card-title">'+data[x].name+'</span><br><p style="text-align:left;">Date: '+data[x].start_time+'</p><br><p>'+data[x].description+'</p></div><div class="card-action"><a target="_blank" href="http://www.facebook.com/events/'+data[x].id+'">Attend</a></div></div></div>' );
+
+           }
          }
-       );
+     );
     };
 
     (function(d, s, id){
@@ -62,14 +72,15 @@
   <div class="container">
       <div class="col s12 main-header"><h1>Events</h1></div>
 
-      <div class="col s12">
-        <!-- <p> Dunno what to put here </p> -->
+      <div class="container">
+        <div class="row" id="event-results">
+          <div class="card"></div>
+        </div>
       </div>
 
   </div>
 
 </body>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
 
 </html>

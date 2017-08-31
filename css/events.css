@@ -11,6 +11,7 @@ body{
 
 h1{
   font-family: 'Alegreya Sans', sans-serif;
+  font-weight: 100;
   font-size: 5em;
 }
 
@@ -24,15 +25,35 @@ h1{
   margin:10px;
 }
 nav{
-  background-color: white;
+  background-color: #fcfdff;
   box-shadow: none;
 }
 nav li a{
   color: black;
 }
 p{
-  font-size: 1.45em;
+  font-size: 1em;
   font-weight: lighter;
+}
+.card{
+  font-family: 'Lato';
+  font-weight: lighter ;
+  width:100%;
+}
+.card-title{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 200;
+  text-align: center;
+}
+.card-action a{
+  color: green;
+}
+.card-content{
+  text-align: left;
+  padding:20px;
+}
+.card .card-content .card-title {
+  font-size:2.2em;
 }
 .s12{
   text-align: center;

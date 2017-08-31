@@ -29,9 +29,10 @@ h1{
 .btn{
   font-size: 1.2em;
   font-family: 'Josefin Sans';
-  font-weight:100;
+  /*font-weight:100;*/
   background: none;
   color: black;
+  padding-top:3px;
   box-shadow: none;
   border: 0.5px black solid;
   border-radius: 0px;
@@ -39,6 +40,7 @@ h1{
 
 .btn:hover{
   background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0px;
 }
 
 .button-row{
