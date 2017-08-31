@@ -40,7 +40,7 @@
 
            for (x in data) {
             //  console.log(data[x].description)
-             $( "#event-results" ).append( '<div class="col s12"><div class="card"><div class="card-content"><span class="card-title">'+data[x].name+'</span><br><p style="text-align:left;">Date: '+data[x].start_time+'</p><br><p>'+data[x].description+'</p></div><div class="card-action"><a target="_blank" href="http://www.facebook.com/events/'+data[x].id+'">Attend</a></div></div></div>' );
+             $( "#event-results" ).append( '<div class="col s12"><div class="card"><div class="card-content"><span class="card-title">'+data[x].name+'</span><br><p style="text-align:left;">Date: '+data[x].start_time+'</p><br><p>'+data[x].description+'</p></div><div class="card-action"><a target="_blank" href="https://www.facebook.com/events/'+data[x].id+'">Attend</a></div></div></div>' );
 
            }
          }
@@ -51,7 +51,7 @@
        var js, fjs = d.getElementsByTagName(s)[0];
        if (d.getElementById(id)) {return;}
        js = d.createElement(s); js.id = id;
-       js.src = "http://connect.facebook.net/en_US/sdk.js";
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
 
