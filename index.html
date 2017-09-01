@@ -6,13 +6,66 @@
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:100|Josefin+Sans:300|Lato" rel="stylesheet">
 
 
+
     <title> NTU OSS </title>
   </head>
 
 <body>
+  <script src="https://use.fontawesome.com/c94995ede1.js"></script>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '102814740426818',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v2.10'
+      });
+
+
+      // FB.AppEvents.logPageView();
+      //  FB.api(
+      //     '/219467331408976/events', {fields: 'description, start_time, id, access_token', access_token: 'EAACEdEose0cBAOl1U0WRnUWFKBpuly3IAoRI5RLP85P6ll41wYWIfFvhD9WKj6mSBxlDG11OgxvZAAQ0tcee0gMUFgq2W4C70j3C1vbbePy2SVWP9J8fZCZAh586hH2wIcjMzFOhGIc8dSo2siZBnHZBLNRz10ejKshSWZBo6SjHny4pgbq1z56Hx1PiDTR8XCnAZCCw0MPTQZDZD'},
+      //     function (response) {
+      //       console.log(response)
+      //     }
+      // );
+
+
+      FB.api(
+         '219467331408976/events?access_token=102814740426818|Yb7Io6_Ze8Ql3EjVcsNabKyLTWo',
+         function (response) {
+           var data = response.data
+           for (item in data){
+             var thing = data[item].start_time
+             pretty_date = thing.charAt(8)+thing.charAt(9)+"/"+thing.charAt(5)+thing.charAt(6)+"/"+thing.charAt(0)+thing.charAt(1)+thing.charAt(2)+thing.charAt(3)
+             data[item].start_time = pretty_date
+            // console.log(pretty_date)
+           }
+           for (x = 0; x < 10; x++) {
+            //  console.log(data[x].description)
+             $( "#event-section" ).append( '<div class="col s12"><div class="card"><div class="card-content"><span class="card-title">'+data[x].name+'</span><br><p style="text-align:left;"><span style="font-weight:bold;">Date:</span> '+data[x].start_time+'</p><br><p>'+data[x].description+'</p></div><div class="card-action"><a target="_blank" href="https://www.facebook.com/events/'+data[x].id+'">Sign Up</a></div></div></div>' );
+
+           }
+         }
+     );
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+
+
+  </script>
 
   <div class="container">
       <div class="col s12 main-header"><h1>NTU <span style="color:#ffca00 ">Open</span><span style="color:#0088fe "> Source</span><span style="color:#22b240 "> Society</span></h1></div>
+
+      <div class="col s12"><h3>Hacking for the hack of it</h3></div>
+
       <div class="col s12"><img class="main-logo" src="logo-main.jpg"/></div>
       <div class="row button-row">
         <div class="col s4 btn-col">
@@ -26,6 +79,45 @@
         </div>
       </div>
   </div>
+  <footer class="page-footer">
+    <!-- <div class="container"> -->
+      <div class="row">
+        <div class="col s6 footer-sections">
+          <h2 class="mailing"> Recent Events </h2>
+          <div class="row mailing event-div " id="event-section">
+          </div>
+        </div>
+        <div class="col s6 footer-sections">
+          <div class="row">
+            <div class="col s12 m12">
+              <h2 class=""> Join our Mailing List</h2 >
+                <div class="row">
+              <div class="input-field mailing col s12 m12">
+                <input id="email" type="email" class="validate" placeholder="Email Address">
+                <!-- <label for="email">Email</label> -->
+              </div>
+              <div class="col s12 m12 mailing btn-col">
+                <a class="waves-effect btn btnC" href="">Sign Up</a>
+              </div>
+              <div class="col s12 m12 mailing btn-col">
+                <h4 class="social"> Connect with us</h4 >
+              </div>
+              <div class="col s12 m12 mailing btn-col">
+                <h4 class=""><a href="http://www.facebook.com/ntuoss" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a><a href="https://twitter.com/ntuoss" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a><a href="https://github.com/ntuoss" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></h4>
+
+              </div>
+
+            </div>
+            </div>
+          </div>
+        </div>
+
+
+        </div>
+      </div>
+    <!-- </div> -->
+
+  </footer>
 
 </body>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
