@@ -4,7 +4,8 @@
     <link rel="stylesheet" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:100|Josefin+Sans:300|Lato" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.js"></script>
 
 
     <title> NTU OSS </title>
@@ -38,12 +39,12 @@
            for (item in data){
              var thing = data[item].start_time
              pretty_date = thing.charAt(8)+thing.charAt(9)+"/"+thing.charAt(5)+thing.charAt(6)+"/"+thing.charAt(0)+thing.charAt(1)+thing.charAt(2)+thing.charAt(3)
-             data[item].start_time = pretty_date
+             data[item].event_date = pretty_date
             // console.log(pretty_date)
            }
            for (x = 0; x < 10; x++) {
             //  console.log(data[x].description)
-             $( "#event-section" ).append( '<div class="col s12"><div class="card"><div class="card-content"><span class="card-title">'+data[x].name+'</span><br><p style="text-align:left;"><span style="font-weight:bold;">Date:</span> '+data[x].start_time+'</p><br><p>'+data[x].description+'</p></div><div class="card-action"><a target="_blank" href="https://www.facebook.com/events/'+data[x].id+'">Sign Up</a></div></div></div>' );
+             $( "#event-section" ).append('<div class="col s12"><div class="card hoverable"><div class="card-content"><span class="card-title">'+data[x].name+'</span><br><p style="text-align:center; font-size:1.4em;">'+data[x].event_date+'</p><br><p p style="text-align:left; font-size:1.2em;">Timing:'+data[x].start_time.charAt(11)+data[x].start_time.charAt(12)+data[x].start_time.charAt(13)+data[x].start_time.charAt(14)+data[x].start_time.charAt(15)+'-'+data[x].end_time.charAt(11)+data[x].end_time.charAt(12)+data[x].end_time.charAt(13)+data[x].end_time.charAt(14)+data[x].end_time.charAt(15)+'</p><br><p>'+data[x].description+'</p></div><div class="card-action"><a target="_blank" href="https://www.facebook.com/events/'+data[x].id+'">Sign Up</a></div></div></div>'  );
 
            }
          }

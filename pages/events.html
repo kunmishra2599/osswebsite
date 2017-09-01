@@ -23,16 +23,6 @@
         version          : 'v2.10'
       });
 
-
-      // FB.AppEvents.logPageView();
-      //  FB.api(
-      //     '/219467331408976/events', {fields: 'description, start_time, id, access_token', access_token: 'EAACEdEose0cBAOl1U0WRnUWFKBpuly3IAoRI5RLP85P6ll41wYWIfFvhD9WKj6mSBxlDG11OgxvZAAQ0tcee0gMUFgq2W4C70j3C1vbbePy2SVWP9J8fZCZAh586hH2wIcjMzFOhGIc8dSo2siZBnHZBLNRz10ejKshSWZBo6SjHny4pgbq1z56Hx1PiDTR8XCnAZCCw0MPTQZDZD'},
-      //     function (response) {
-      //       console.log(response)
-      //     }
-      // );
-
-
       FB.api(
          '219467331408976/events?access_token=102814740426818|Yb7Io6_Ze8Ql3EjVcsNabKyLTWo',
          function (response) {
@@ -40,13 +30,13 @@
            for (item in data){
              var thing = data[item].start_time
              pretty_date = thing.charAt(8)+thing.charAt(9)+"/"+thing.charAt(5)+thing.charAt(6)+"/"+thing.charAt(0)+thing.charAt(1)+thing.charAt(2)+thing.charAt(3)
-             data[item].start_time = pretty_date
+             data[item].event_date = pretty_date
             // console.log(pretty_date)
            }
            for (x in data) {
             //  console.log(data[x].description)
-             $( "#event-results" ).append( '<div class="col s12"><div class="card hoverable"><div class="card-content"><span class="card-title">'+data[x].name+'</span><br><p style="text-align:left;"><span style="font-weight:bold;">Date:</span> '+data[x].start_time+'</p><br><p>'+data[x].description+'</p></div><div class="card-action"><a target="_blank" href="https://www.facebook.com/events/'+data[x].id+'">Sign Up</a></div></div></div>' );
-
+             $( "#event-results" ).append( '<div class="col s12"><div class="card hoverable"><div class="card-content"><span class="card-title">'+data[x].name+'</span><br><p style="text-align:center; font-size:1.4em;">'+data[x].event_date+'</p><br><p p style="text-align:left; font-size:1.2em;">Timing:'+data[x].start_time.charAt(11)+data[x].start_time.charAt(12)+data[x].start_time.charAt(13)+data[x].start_time.charAt(14)+data[x].start_time.charAt(15)+'-'+data[x].end_time.charAt(11)+data[x].end_time.charAt(12)+data[x].end_time.charAt(13)+data[x].end_time.charAt(14)+data[x].end_time.charAt(15)+'</p><br><p>'+data[x].description+'</p></div><div class="card-action"><a target="_blank" href="https://www.facebook.com/events/'+data[x].id+'">Sign Up</a></div></div></div>' );
+            //  console.log(data[x].start_time.charAt(11)+data[x].start_time.charAt(12)+data[x].start_time.charAt(13)+data[x].start_time.charAt(14)+data[x].start_time.charAt(15)+'-'+data[x].end_time.charAt(11)+data[x].end_time.charAt(12)+data[x].end_time.charAt(13)+data[x].end_time.charAt(14)+data[x].end_time.charAt(15))
            }
          }
      );
@@ -76,14 +66,15 @@
 
   <div class="container">
       <div class="col s12 main-header"><h1>Recent Events</h1></div>
-      <div class="col s12"> <h3>We've done tons of events. See all of them <a href="https://www.facebook.com/ntuoss/events" target="_blank">here</a>. </h3> </div>
       <div class="container">
         <div class="row" id="event-results">
-          <div class="card"></div>
+
         </div>
+        <div class="col s12"> <h3>We've done tons of events. See all of them <a href="https://www.facebook.com/ntuoss/events" target="_blank">here</a>. </h3> </div>
       </div>
 
   </div>
+
 
 </body>
 

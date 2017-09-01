@@ -20,7 +20,7 @@ h3{
 
 .main-header{
   text-align: center;
-  margin-top: 12%;
+  margin-top: 13%;
 }
 .main-logo{
   height:20%;
@@ -65,7 +65,8 @@ h3{
   background-color:inherit;
   margin-top: 10%;
   color: black;
-  font-family: 'Alegreya Sans'
+  font-family: 'Alegreya Sans';
+  margin-bottom: -30px;
 }
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating):hover{
   color: #22b240
